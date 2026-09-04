@@ -1,0 +1,56 @@
+*{box-sizing:border-box}
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans KR","Malgun Gothic",sans-serif}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:#25253a;background:linear-gradient(145deg,#f7f4ff,#fff 48%,#f2f8ff)}
+button{font:inherit;border:0;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.app{width:min(720px,100%);min-height:100vh;margin:auto;padding:14px 18px;position:relative}
+.screen{display:none;min-height:calc(100vh - 28px);flex-direction:column;align-items:center}
+.screen.active{display:flex}
+#startScreen,#resultScreen{justify-content:center}
+.bg-pokeball{position:fixed;width:430px;height:430px;border:45px solid #ffffff50;border-radius:50%;right:-210px;top:-150px;pointer-events:none}
+.brand{font-weight:900;font-size:19px;margin-top:4px}
+.brand span{font-size:24px}
+.hero{text-align:center;position:relative;margin:5vh 0 24px}
+.heroBall{width:128px;height:128px;border-radius:50%;display:grid;place-items:center;margin:auto;background:linear-gradient(#ff6573 0 45%,#29293d 45% 53%,#fff 53%);color:#29293d;font-size:48px;font-weight:1000;box-shadow:0 14px 35px #00000016;transform:rotate(-8deg)}
+.hero h1{font-size:clamp(42px,12vw,70px);line-height:1;margin:24px 0 10px;font-weight:1000;letter-spacing:-2px}
+.hero p{font-size:22px;line-height:1.5;margin:0;color:#65657a}
+.spark{position:absolute;font-size:30px;animation:float 2s ease-in-out infinite}
+.s1{left:8%;top:3%;}.s2{right:6%;bottom:16%;animation-delay:.7s}
+@keyframes float{50%{transform:translateY(-10px) rotate(12deg)}}
+.mini-rules{display:flex;gap:9px;width:100%;justify-content:center;margin-bottom:28px}
+.mini-rules div{background:#fff;border:1px solid #eeeef7;border-radius:18px;padding:11px 14px;box-shadow:0 7px 20px #00000009;font-size:16px;display:flex;gap:7px;align-items:center}
+.mini-rules strong{font-size:14px}
+.btn{font-weight:950;border-radius:20px;transition:transform .12s,box-shadow .12s,filter .12s}
+.btn:active{transform:translateY(4px);box-shadow:none!important}
+.primary{background:#ffd83d;color:#3d3310;box-shadow:0 7px 0 #d6aa16;padding:18px 30px;font-size:24px;min-width:min(90vw,330px)}
+.note{font-size:13px;color:#89899a;margin-top:21px}
+.game-head{width:100%;display:grid;grid-template-columns:48px 1fr 100px;align-items:center;gap:10px;margin:4px 0 10px}
+.iconBtn{width:44px;height:44px;border-radius:15px;background:#fff;box-shadow:0 5px 16px #0000000e;font-size:24px}
+.counter{text-align:center;font-weight:950;font-size:20px}
+.score-pill{justify-self:end;background:#fff;padding:10px 13px;border-radius:16px;font-weight:950;box-shadow:0 5px 16px #0000000e}
+.progress{width:100%;height:10px;background:#e8e8f1;border-radius:20px;overflow:hidden;margin-bottom:14px}
+.progress #progressBar{height:100%;width:5%;background:linear-gradient(90deg,#7562ff,#a28cff);border-radius:20px;transition:width .3s}
+.question-label{font-size:22px;font-weight:950;margin:3px 0 11px}
+.pokemon-wrap{width:min(88vw,500px);aspect-ratio:1;background:radial-gradient(circle at 50% 46%,#fff 0 46%,#f1efff 47% 100%);border:7px solid #fff;border-radius:38px;box-shadow:0 18px 45px #4d3f9817;display:grid;place-items:center;position:relative;overflow:hidden}
+.pokemon-wrap img{width:84%;height:84%;object-fit:contain;display:none;filter:drop-shadow(0 15px 12px #00000016);z-index:2}
+.loading{font-size:17px;font-weight:800;color:#777}
+.orbit{position:absolute;border:2px dashed #c9c1ff;border-radius:50%;z-index:1;opacity:.65}
+.o1{width:110%;height:40%;transform:rotate(-22deg)}.o2{width:40%;height:110%;transform:rotate(22deg)}
+.heard{min-height:29px;margin-top:10px;font-size:18px;font-weight:800;color:#5e5e72}
+.result{min-height:35px;font-size:25px;font-weight:1000;margin:0;text-align:center}
+.actions{width:100%;max-width:500px;margin-top:6px}
+.mic{width:100%;background:#7762ff;color:white;box-shadow:0 7px 0 #5142c2;font-size:25px;padding:17px}
+.mic.listening{animation:pulse 1s infinite}
+@keyframes pulse{50%{filter:brightness(1.12);transform:scale(1.02)}}
+.sub-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.ghost,.next{padding:13px 10px;font-size:16px;background:#fff;border:2px solid #e1e1ec}
+.next{border-color:#ddd}
+.status{font-size:14px;color:#777;text-align:center;margin:12px 5px;line-height:1.4}
+.hidden{display:none!important}
+.confetti{font-size:26px;word-spacing:12px}
+.trophy{font-size:84px;margin:6px 0}
+h2{font-size:52px;line-height:1;margin:0 0 8px;font-weight:1000}
+.finished{font-size:18px;color:#777;margin:0 0 20px}
+.score-card{background:#fff;width:min(90vw,380px);border-radius:28px;padding:20px;box-shadow:0 15px 40px #00000010}
+.score-title{font-size:16px;color:#777;font-weight:800}.score-card>div:nth-child(2){font-size:72px;font-weight:1000;line-height:1.05}.score-card small{font-size:25px;margin-left:4px}.score-card p{margin:8px 0 0;font-weight:800;color:#666}
+.final-message{font-size:23px;font-weight:950;margin:17px 0 26px}
+@media(max-width:430px){.app{padding:10px 13px}.hero{margin-top:3vh}.heroBall{width:110px;height:110px}.hero h1{font-size:46px}.mini-rules div{padding:9px 10px}.mini-rules strong{font-size:13px}.pokemon-wrap{border-radius:30px}.question-label{font-size:20px}.mic{font-size:22px}}

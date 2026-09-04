@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#7b61ff">
+<title>포켓몬 이름 맞히기!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-pokeball"></div>
+<main class="app">
+  <section id="startScreen" class="screen active">
+    <div class="brand"><span>⚡</span> 포켓몬 퀴즈</div>
+    <div class="hero">
+      <div class="spark s1">✦</div><div class="spark s2">✦</div>
+      <div class="heroBall">◓</div>
+      <h1>누구일까요?</h1>
+      <p>포켓몬 그림을 보고<br><b>이름을 말해보세요!</b></p>
+    </div>
+    <div class="mini-rules">
+      <div>👀<strong>그림 보기</strong></div>
+      <div>🎤<strong>말하기</strong></div>
+      <div>⭐<strong>점수 받기</strong></div>
+    </div>
+    <button id="startBtn" class="btn primary">🚀 게임 시작</button>
+    <p class="note">20문제 · 같은 포켓몬은 한 게임에 한 번만!</p>
+  </section>
+
+  <section id="gameScreen" class="screen">
+    <header class="game-head">
+      <button id="homeBtn" class="iconBtn" aria-label="처음으로">⌂</button>
+      <div class="counter" id="progressText">1 / 20</div>
+      <div class="score-pill">⭐ <span id="score">0</span></div>
+    </header>
+    <div class="progress"><div id="progressBar"></div></div>
+
+    <div class="question-label">이 포켓몬의 이름은?</div>
+    <div class="pokemon-wrap">
+      <div class="orbit o1"></div><div class="orbit o2"></div>
+      <div id="loading" class="loading">포켓몬을 불러오는 중…</div>
+      <img id="pokemonImage" alt="포켓몬 그림">
+    </div>
+
+    <div id="heardText" class="heard"></div>
+    <div id="resultText" class="result"></div>
+
+    <div class="actions">
+      <button id="micBtn" class="btn mic">🎤 <span>말하기</span></button>
+      <div class="sub-actions">
+        <button id="retryBtn" class="btn ghost hidden">🎤 다시 말하기</button>
+        <button id="nextBtn" class="btn next">➡️ 다음 문제</button>
+      </div>
+    </div>
+    <div id="micStatus" class="status">마이크를 누르고 포켓몬 이름을 말해보세요!</div>
+  </section>
+
+  <section id="resultScreen" class="screen">
+    <div class="confetti">🎉 ✨ 🎊</div>
+    <div class="trophy">🏆</div>
+    <h2>대단해요!</h2>
+    <p class="finished">20문제를 모두 풀었어요!</p>
+    <div class="score-card">
+      <div class="score-title">최종 점수</div>
+      <div><span id="finalScore">0</span><small>점</small></div>
+      <p id="finalStats"></p>
+    </div>
+    <p id="finalMessage" class="final-message"></p>
+    <button id="restartBtn" class="btn primary">🔄 다시 하기</button>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
